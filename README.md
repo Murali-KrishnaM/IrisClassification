@@ -25,7 +25,7 @@ This repo contains a single-end project intended for learning and portfolio use.
 
 ---
 
-## Repository structure (suggested)
+## Repository structure 
 
 ```
 .
@@ -52,22 +52,11 @@ source .venv/bin/activate      # macOS / Linux
 pip install -r requirements.txt
 ```
 
-**Suggested `requirements.txt`**
-
-```
-numpy
-pandas
-scikit-learn
-matplotlib
-seaborn
-jupyterlab
-```
-
 ---
 
 ## How to run
 
-1. Activate the virtual environment (see above).
+1. Activate the virtual environment .
 2. Start Jupyter:
 
 ```bash
@@ -87,12 +76,10 @@ jupyter lab        # or jupyter notebook
 * **Scaling** — `StandardScaler` fit on `X_train` then transform test set.
 * **Model training**:
 
-  * Baseline: `LogisticRegression` (OvR / multinomial) — fast baseline.
-  * Main: `RandomForestClassifier` with `GridSearchCV` hyperparameter tuning.
+  * `RandomForestClassifier` with `GridSearchCV` hyperparameter tuning.
 * **Evaluation**:
 
   * `accuracy_score`, `confusion_matrix`, `classification_report`.
-  * `cross_val_score` (k-fold CV) to show stability.
 * **Feature importance** (Random Forest) visualized and printed.
 * **Short discussion** about overfitting, model choice, and limitations.
 * **Reproducibility**: `random_state=42` used where applicable.
@@ -143,23 +130,6 @@ best = grid.best_estimator_
 y_pred = best.predict(X_test)
 ```
 
-Cross-validation stability check:
-
-```python
-from sklearn.model_selection import cross_val_score
-cv_scores = cross_val_score(best, X, y, cv=5)
-print(f"CV Accuracy: {cv_scores.mean():.4f} ± {cv_scores.std():.4f}")
-```
-
-Feature importance printout:
-
-```python
-import pandas as pd
-fi = pd.Series(best.feature_importances_, index=X.columns)
-fi.sort_values(ascending=False)
-```
-
----
 
 ## Key findings & interpretation
 
@@ -188,26 +158,13 @@ fi.sort_values(ascending=False)
 
 ---
 
-## License
-
-Use whichever license you prefer. Example: MIT.
-
-`LICENSE` file suggestion (MIT — include in repo if you want to open-source it).
-
----
 
 ## Contact
 
-If you want edits to the notebook style, additions (like README badges, auto-generated report, or a small model-card), say the word and I’ll prepare them.
+* LinkedIn: www.linkedin.com/in/murali-krishna-m893
+* Email: murali.krishna1591@gmail.com
 
 ---
 
-### Quick commit message suggestion
-
-```
-chore: add cleaned Iris classifier notebook + README; include GridSearchCV, CV evaluation, and feature-importance analysis
-```
-
----
 
 Want me to generate the exact `README.md` file as a downloadable file or paste-ready content for your repo?
