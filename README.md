@@ -165,6 +165,3 @@ y_pred = best.predict(X_test)
 * Email: murali.krishna1591@gmail.com
 
 ---
-
-
-Want me to generate the exact `README.md` file as a downloadable file or paste-ready content for your repo?
